@@ -1,0 +1,10 @@
+1) Download or clone Vulnerable code to local system (https://github.com/asecurityguru/devsecops-jenkins-k8s-tf-sast-sca-sonarcloud-snyk-repo)
+2) Make sure Java11 is installed (https://www.oracle.com/in/java/technologies/javase/jdk11-archive-downloads.html)
+3) Make sure maven is installed and environment variable is set (https://maven.apache.org/download.cgi)
+4) Install Docker Desktop on Windows (https://docs.docker.com/desktop/install/windows-install/)
+5) Make sure WSL 2 and Virtual Machine Platform feature in windows is enabled
+6) Download and run SonarQube image in Docker using commands:
+      docker run -d --name sonarqube -p 9000:9000 -p 9092:9092 sonarqube
+
+
+mvn clean verify sonar:sonar -Dsonar.projectKey=VulnerableProjectJava -Dsonar.host.url=http://localhost:9000 -Dsonar.login=sqp_aaae46f1f11b10875ac1a6b5aa40e4e07da833ad
